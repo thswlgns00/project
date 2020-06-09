@@ -57,7 +57,7 @@
 		%>
 <
 <script type="text/javascript">
-		self.window.alert("없는 글입니다.");
+		self.window.alert("없는 글입니다!.");
 		location.href="javascript:history.back()";
 </script>
 <%
