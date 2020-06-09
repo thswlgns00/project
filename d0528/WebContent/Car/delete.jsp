@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script language = "javascript">  // 자바 스크립트 시작
+<script language = "javascript"> 
 
 function deleteCheck()
   {

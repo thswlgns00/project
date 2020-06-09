@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>게시판</title>
+<title>게시판 보기</title>
 <style>
 nav {
 	margin: 0 0 0 0;
