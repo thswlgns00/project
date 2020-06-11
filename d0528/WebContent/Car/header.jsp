@@ -29,7 +29,7 @@
 			if (checkName == null) {
 		%>
 		<a id="logo" href="index.jsp">카센터 (붕붕이 나라)</a> <span class="right"
-			style="padding: 20px 10px;">
+			style="padding: 20px 10px">
 			<form method="post" action="login.jsp">
 				<fieldset>
 					<label for="ID">회원ID:</label> <input type="text" id="id" name="id"
