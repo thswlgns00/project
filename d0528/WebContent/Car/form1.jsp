@@ -81,16 +81,16 @@ td {
 	function check() {
 	
 		if (document.fname.id.value == "") {
-			alert("id를 입력하세요");
+			alert("id를 입력하세요!");
 			document.fname.id.focus();
 			return;
 		} else if (document.fname.name.value == "") {
-			alert("이름을 입력하세요");
+			alert("이름을 입력하세요!");
 			document.fname.name.focus();
 			return;
 		}
 		if (document.fname.passwd.value != document.fname.passcheck.value) {
-			alert("패스워드를 다시 확인하세요");
+			alert("패스워드를 다시 확인하세요!");
 			document.fname.passwd.focus();
 			return;
 		}
