@@ -46,7 +46,7 @@
 			} else {
 		%>
 		<a id="logo" href="index.jsp">카센터 (붕붕이 나라)</a> <span class="right"
-			style="padding: 30px 10px;"> <%=checkName%>님 환영합니다. <a
+			style="padding: 30px 10px;"> <%=checkName%>님 환영합니다!. <a
 			href="logout.jsp">logout</a>
 
 		</span>
