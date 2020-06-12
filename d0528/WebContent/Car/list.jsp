@@ -18,7 +18,7 @@ nav {
 	color: #ff0099;
 	font-size: 14px;
 }
- 
+
 nav ul {
 	list-style: none;
 }
@@ -61,7 +61,7 @@ div>img {
 		int total = 0;
 		String rst = "";
 		String msg = "";
- 	int idx;
+		int idx;
 		String jdbc_driver = "com.mysql.cj.jdbc.Driver";
 		String jdbc_url = "jdbc:mysql://localhost/yangjung?serverTimezone=UTC";
 
@@ -69,14 +69,13 @@ div>img {
 			Class.forName(jdbc_driver);
 			conn = DriverManager.getConnection(jdbc_url, "thswlgns00",
 					"Cc3220644!");
-		
 
 			String sqlCount = "select count(*) from board";
 			pstmt = conn.prepareStatement(sqlCount);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				total = rs.getInt(1); 
+				total = rs.getInt(1);
 			}
 			rs.close();
 
@@ -128,7 +127,7 @@ div>img {
 			<%
 				} else {
 						while (rs.next()) {
-						 idx = rs.getInt(1);
+							idx = rs.getInt(1);
 							String name = rs.getString(2);
 							String title = rs.getString(3);
 							String time = rs.getString(4);
@@ -143,8 +142,8 @@ div>img {
 						for (int j = 0; j < indent; j++) {
 					%> &ndsp;&ndsp;&ndsp; <%
  	}
-					
-					if (indent != 0) {
+
+ 				if (indent != 0) {
  %> <img src="../image/reply_icon.gif"> <%
  	}
  %> <a href="view.jsp?idx=<%=idx%>"><%=title%></a>
@@ -160,9 +159,9 @@ div>img {
 			<%
 				}
 					}
-			rs.close();
-			pstmt.close();
-			conn.close();
+					rs.close();
+					pstmt.close();
+					conn.close();
 
 				} catch (SQLDataException e) {
 					out.println(e.getMessage());
