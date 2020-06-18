@@ -11,8 +11,8 @@
 		if (document.form.sNo.value == "") {
 			alert("학번이 입력되지 않았습니다");
 			document.form.sNo.focus();		
-		}
-		
+		}else{
+			document.form.submit();
 	}
 			</script>
 <style>
