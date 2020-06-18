@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%@ include file="DBconn.jsp"%>
-	<table width="300" border="1">
+	<table width="300 "border="1">
 		<tr>
 			<th>아이디</th>
 			<th>비밀번호</th>
