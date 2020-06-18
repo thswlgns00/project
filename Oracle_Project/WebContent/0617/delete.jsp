@@ -34,7 +34,7 @@ th, td {
 		</header>
 		<nav> <%@ include file="nav.jsp"%> </nav>
 		<section> <!--내용 시작-->
-		<h2>학생 성적 입력</h2>
+		<h2>성적삭제</h2>
 		<form name=form method="post" action="delete_ok.jsp">
 			<table>
 				<tr>
