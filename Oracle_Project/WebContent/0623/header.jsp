@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 
 </head>
-<body>
-       (과정평가형 정보처리 산업기사)성적조회 프로그램 ver1.0
+<body>(과정평가형 정보처리 산업기사)성적조회 프로그램 ver1.0
 </body>
 </html>

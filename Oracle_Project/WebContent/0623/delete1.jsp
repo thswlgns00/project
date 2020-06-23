@@ -46,17 +46,16 @@ th, td {
 			<table>
 				<tr>
 					<th>성명</th>
-					<td><input type="text" name="name" ></td>
+					<td><input type="text" name="name"></td>
 				</tr>
 				<tr>
 					<th>사원번호</th>
-					<td><input type="text" name="id" ></td>
+					<td><input type="text" name="id"></td>
 				</tr>
-				<td colspan="2" id=button>
-				<input type="button" value="삭제" onclick="javascript:check()">
-				<input type="button" value="취소" onclick="javascript:history.back(-1);">
-				</td>
-					
+				<td colspan="2" id=button><input type="button" value="삭제"
+					onclick="javascript:check()"> <input type="button"
+					value="취소" onclick="javascript:history.back(-1);"></td>
+
 			</table>
 		</form>
 		</section>

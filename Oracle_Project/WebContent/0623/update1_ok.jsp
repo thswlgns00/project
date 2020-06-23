@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>modify_process.jsp</title>
 </head>
 <body>
-<%@ include file="DBconn1.jsp"%>
+	<%@ include file="DBconn1.jsp"%>
 	<%
 		request.setCharacterEncoding("utf-8");
 	 
@@ -32,19 +32,19 @@
 	    	   pstmt.setString(6, phone);
 	    	   pstmt.executeUpdate();
 	    	   %>
-			   <script language = javascript>
+	<script language=javascript>
 	           self.window.alert("사원정보를 수정 하였습니다.");
 	       
 	           location.href="list1.jsp";
 	           </script>
-			  <%
+	<%
 	       } catch (SQLException e) {
 	    	   %>
-		          <script language=javascript>
+	<script language=javascript>
 		          alert("사원정보를 수정 할 수 없습니다.")
 		          location.href="javascript:history.back()";
 		          </script>
-		       <%
+	<%
 	       } finally {
 	    	   if (pstmt != null)
 	    		   pstmt.close();
