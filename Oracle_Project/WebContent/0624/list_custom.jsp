@@ -82,7 +82,7 @@ th, td {
 							String carNumber = rs.getString(9);
 							String carType = rs.getString(10);
 							
-					
+				
 				%>
 				<tr>
 					<td><%=id%></td>

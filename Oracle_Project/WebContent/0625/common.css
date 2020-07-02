@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+* {
+	margin: auto;
+}
+
+#wrap {
+	width: 100%;
+}
+
+.headertable {
+	width: 100%;
+	color: white;
+	background-color: blue;
+	text-align: center;
+}
+
+.navtable {
+	width: 100%;
+	background-color: purple;
+}
+
+.navtable ul {
+	list-style-type: none;
+}
+
+.navtable li {
+	width: 100%; 
+	padding: 0 4% 0 4%;
+	display: inline;
+}
+.navtable a {
+	text-decoration: none;
+	color: white;
+}
+.section {
+	height: 80%;
+	width: 100%;
+	background-color: gray;
+	padding: 1% 1% 1% 1%;
+}
+.section h1 {
+	text-align: center;
+	font-size: 2em;
+}
+
+.section ol {
+	padding: 0 1% 0 1%;
+}
+
+.footertable {
+	width: 100%; color : white;
+	background-color: blue;
+	text-align: center;
+	color: white;
+}
+
+.header {
+	height: 10%;
+	width: 100%;
+}
+
+.nav {
+	height: 5%;
+	width: 100%;
+}
+
+.footer {
+	height: 5%;
+	width: 100%;
+}
+	.table {
+	
+	width: 800px;
+	height: 100px;
+	border: 1px solid gray;
+}
+
+.table th{
+	border: 1px solid black;
+}
+.table td{
+	border: 1px solid black;
+}
