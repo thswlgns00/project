@@ -40,8 +40,7 @@
         			 %>
 	<script language=javascript>
 			           self.window.alert("해당 교과목을 삭제하였습니다");
-			           self.window.alert("교과목 조회 화면으로 이동합니다.");
-			           location.href="list1.jsp";
+			           			           location.href="list1.jsp";
 			           </script>
 	<%
         		 } else

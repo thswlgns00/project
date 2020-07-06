@@ -52,11 +52,11 @@
 			<table class="table">
 				<tr>
 					<th>과목코드</th>
-					<td><input type="text" name="id" size="25"  required></td>
+					<td><input type="text" name="id" size="25" required></td>
 				</tr>
 				<tr>
 					<th>과목명</th>
-					<td><input type="text" name="name" size="25"  required></td>
+					<td><input type="text" name="name" size="25" required></td>
 				</tr>
 				<tr>
 					<th>학점</th>
@@ -65,6 +65,7 @@
 				<tr>
 					<th>담당강사</th>
 					<td><select name="lecturer">
+							<option value="">담당 강사</option>
 							<option value="1">김교수</option>
 							<option value="2">이교수</option>
 							<option value="3">박교수</option>

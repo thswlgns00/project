@@ -30,56 +30,56 @@
 }
 </style>
 <script type="text/javascript">
-function checkWrite() {
-	if (document.modify.id.value == "") {
-		alert("과목ID를 입력하세요");
-		document.modify.id.focus();
-	}else{
-		document.modify.submit();
+	function checkWrite() {
+		if (document.modify.id.value == "") {
+			alert("과목ID를 입력하세요");
+			document.modify.id.focus();
+		} else {
+			document.modify.submit();
+		}
 	}
-}
 </script>
 </head>
 <body>
 	<%@ include file="DBconn.jsp"%>
 	<%
 		request.setCharacterEncoding("utf-8");
-           
-	       PreparedStatement pstmt = null;
-	       ResultSet rs = null;
-	       int idx = Integer.parseInt(request.getParameter("idx"));
-	       String id = "";
-	       String name = "";
-	       String credit = "";
-	       String lecturer = "";
-	       int weekNum = 0;
-	       String start_hour = "";
-	       String end_end = "";
-	       String week = "";
-	       try{
-	    	   String sql = "select * from course_tbl where id=" + idx;
-	    	   pstmt = conn.prepareStatement(sql);
-	    	   rs = pstmt.executeQuery();
-	    	   if(rs.next()){
-	    		 id = rs.getString(1);
-	    		 name = rs.getString(2);
-	    		 credit = rs.getString(3);
-	    		 lecturer = rs.getString(4);
-	    		 weekNum = rs.getInt(5);
-	    		 start_hour = rs.getString(6);
-	    		 end_end = rs.getString(7);
-	    		 
-	    	   }
-	       } catch (SQLException e) {
-	    	   out.println( e.getMessage() );
-	       } finally {
-	    	   if (pstmt != null)
-	    		   pstmt.close();
-	    	   if (conn != null)
-	    		   conn.close();
-	    	  }
-	       System.out.println(id);
-	       System.out.println(idx);
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int idx = Integer.parseInt(request.getParameter("idx"));
+		String id = "";
+		String name = "";
+		String credit = "";
+		String lecturer = "";
+		int weekNum = 0;
+		String start_hour = "";
+		String end_end = "";
+		String week = "";
+		try {
+			String sql = "select * from course_tbl where id=" + idx;
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				id = rs.getString(1);
+				name = rs.getString(2);
+				credit = rs.getString(3);
+				lecturer = rs.getString(4);
+				weekNum = rs.getInt(5);
+				start_hour = rs.getString(6);
+				end_end = rs.getString(7);
+
+			}
+		} catch (SQLException e) {
+			out.println(e.getMessage());
+		} finally {
+			if (pstmt != null)
+				pstmt.close();
+			if (conn != null)
+				conn.close();
+		}
+		System.out.println(id);
+		System.out.println(idx);
 	%>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
@@ -104,27 +104,27 @@ function checkWrite() {
 				<tr>
 					<th align="center">강사</th>
 					<td><select name="lecturer">
-							<option value="1" <%if(lecturer.equals("1")){%> selected <%} %>>김교수</option>
-							<option value="2" <%if(lecturer.equals("2")){%> selected <%} %>>이교수</option>
-							<option value="3" <%if(lecturer.equals("3")){%> selected <%} %>>박교수</option>
-							<option value="4" <%if(lecturer.equals("4")){%> selected <%} %>>우교수</option>
-							<option value="5" <%if(lecturer.equals("5")){%> selected <%} %>>최교수</option>
-							<option value="6" <%if(lecturer.equals("6")){%> selected <%} %>>강교수</option>
-							<option value="7" <%if(lecturer.equals("7")){%> selected <%} %>>황교수</option>
+							<option value="1" <%if (lecturer.equals("1")) {%> selected <%}%>>김교수</option>
+							<option value="2" <%if (lecturer.equals("2")) {%> selected <%}%>>이교수</option>
+							<option value="3" <%if (lecturer.equals("3")) {%> selected <%}%>>박교수</option>
+							<option value="4" <%if (lecturer.equals("4")) {%> selected <%}%>>우교수</option>
+							<option value="5" <%if (lecturer.equals("5")) {%> selected <%}%>>최교수</option>
+							<option value="6" <%if (lecturer.equals("6")) {%> selected <%}%>>강교수</option>
+							<option value="7" <%if (lecturer.equals("7")) {%> selected <%}%>>황교수</option>
 					</select></td>
 				</tr>
 				<tr>
 					<th align="center">요일</th>
 					<td>월: <input type="radio" name="week" value="1"
-						<%if(weekNum == 1){%> checked <%} %>> 화: <input
-						type="radio" name="week" value="2" <%if(weekNum == 2){%> checked
-						<%} %>> 수: <input type="radio" name="week" value="3"
-						<%if(weekNum == 3){%> checked <%} %>> 목: <input
-						type="radio" name="week" value="4" <%if(weekNum == 4){%> checked
-						<%} %>> 금: <input type="radio" name="week" value="5"
-						<%if(weekNum == 5){%> checked <%} %>> 토: <input
-						type="radio" name="week" value="6" <%if(weekNum == 6){%> checked
-						<%} %>>
+						<%if (weekNum == 1) {%> checked <%}%>> 화: <input
+						type="radio" name="week" value="2" <%if (weekNum == 2) {%> checked
+						<%}%>> 수: <input type="radio" name="week" value="3"
+						<%if (weekNum == 3) {%> checked <%}%>> 목: <input
+						type="radio" name="week" value="4" <%if (weekNum == 4) {%> checked
+						<%}%>> 금: <input type="radio" name="week" value="5"
+						<%if (weekNum == 5) {%> checked <%}%>> 토: <input
+						type="radio" name="week" value="6" <%if (weekNum == 6) {%> checked
+						<%}%>>
 					</td>
 				</tr>
 				<tr>

@@ -97,7 +97,7 @@
 			</tr>
 			<%
 				try {
-					String sql = "select * from studTbl";
+					String sql = "select * from studTbl order by studNo";
 					pstmt = conn.prepareStatement(sql);
 					rs = pstmt.executeQuery();
 

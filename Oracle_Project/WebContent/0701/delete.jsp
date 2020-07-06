@@ -33,14 +33,12 @@
 
 <script type="text/javascript">
 function checkDelete() {
-	if (document.deleteform.id.value == "") {
-		alert("과목코드를 입력하세요");
-		document.deleteform.id.focus();
-	}else if (document.deleteform.name.value == "") {
-		alert("과목명을 입력하세요");
-		document.deleteform.name.focus();
-	}else
+	if(confirm("삭제 하시겠습니까?") == true){
 		document.deleteform.submit();
+	}else{
+		return;
+	}
+	
 }
 </script>
 
@@ -48,21 +46,21 @@ function checkDelete() {
 <body>
 	<%@ include file="DBconn.jsp"%>
 	<%
-          ResultSet rs = null;
-          PreparedStatement pstmt = null;
-          int idx = Integer.parseInt(request.getParameter("idx"));
-          String id = "";
-          String name = "";
-           try{
-        	   String sql = "select id, name from course_tbl where id=" + idx;
-        	   pstmt = conn.prepareStatement(sql);
-        	   rs = pstmt.executeQuery();
-           
-           if(rs.next()){
-        	   id = rs.getString(1);
-        	   name = rs.getString(2);
-           }
-     %>
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		int idx = Integer.parseInt(request.getParameter("idx"));
+		String id = "";
+		String name = "";
+		try {
+			String sql = "select id, name from course_tbl where id=" + idx;
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				id = rs.getString(1);
+				name = rs.getString(2);
+			}
+	%>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<div class="section">
@@ -74,36 +72,35 @@ function checkDelete() {
 			<table border=1 align="center" class="table">
 				<tr>
 					<th>과목코드</th>
-					<td><input type="text" name="id" value="<%=id %>"></td>
+					<td><input type="text" name="id" value="<%=id%>"></td>
 				</tr>
 				<tr>
 					<th>과목명</th>
-					<td><input type="text" name="name" value="<%=name %>">
+					<td><input type="text" name="name" value="<%=name%>">
 					</td>
 				</tr>
 				<tr>
-					<td colspan=2 style="text-align: center;"><input type="submit"
-						value="삭  제" onclick="javascript:checkDelete()"> <input
-						type="button" value="취  소" onclick="javascript:history.back(-1);">
+					<td colspan=2 style="text-align: center;">
+					<input type="button"	value="삭  제"  onclick="javascript:checkDelete()">
+					 <input	type="button" value="취  소" onclick="javascript:history.back(-1);">
 					</td>
 				</tr>
-				<% 
-           } catch (SQLException e) {
-        	   out.println("테이블 호출에 실패했습니다.<br>");
-        	   out.println("SQLException: " + e.getMessage());
-           } finally {
-        	   if (rs != null)
-        		   rs.close();
-        	   if (conn != null)
-        		   conn.close();
-        	   if (pstmt != null)
-        		   pstmt.close();
-           }
-        %>
+				<%
+					} catch (SQLException e) {
+						out.println("테이블 호출에 실패했습니다.<br>");
+						out.println("SQLException: " + e.getMessage());
+					} finally {
+						if (rs != null)
+							rs.close();
+						if (conn != null)
+							conn.close();
+						if (pstmt != null)
+							pstmt.close();
+					}
+				%>
 			</table>
 		</form>
-	</div>
-	>
+	</div>	
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

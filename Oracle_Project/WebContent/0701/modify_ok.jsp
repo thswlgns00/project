@@ -36,8 +36,8 @@
 	    	   
 	    	   %>
 	<script language=javascript>
-	           self.window.alert("교과목정보를 수정 하였습니다.");
-	           self.window.alert("교과목 목록 화면으로 이동합니다.");
+	           self.window.alert("교과목정보를 수정 완료되었습니다.");
+	           
 	           location.href="list1.jsp";
 	           </script>
 	<%

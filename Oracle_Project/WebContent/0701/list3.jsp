@@ -10,9 +10,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
-	<div class="section">
-	
-	</div>
+	<div class="section"></div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

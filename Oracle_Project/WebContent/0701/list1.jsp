@@ -99,7 +99,7 @@
 				</tr>
 				<%
 					try {
-						String sql = "select id,name,credit,lecturer,week,to_char(start_hour,'0999'),to_char(end_end,'0999') from course_tbl";
+						String sql = "select* from course_tbl";
 						pstmt = conn.prepareStatement(sql);
 						rs = pstmt.executeQuery();
 
@@ -131,8 +131,16 @@
 								break;
 							case 6:
 								week = "토요일";
-								break;
+								break;															//switch 를 통해 치환
 							}
+							lecturer=lecturer.replaceFirst("1", "김교수");
+							lecturer=lecturer.replaceFirst("2", "이교수");
+							lecturer=lecturer.replaceFirst("3", "박교수");
+							lecturer=lecturer.replaceFirst("4", "우교수");
+							lecturer=lecturer.replaceFirst("5", "최교수");
+							lecturer=lecturer.replaceFirst("6", "강교수");
+							lecturer=lecturer.replaceFirst("7", "황교수");				//치환해서 표현해주기.
+							
 				%>
 				<tr class="tr">
 					<td class="td"><%=id%></td>
